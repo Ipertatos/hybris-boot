@@ -14,6 +14,69 @@ shift
 echo "Fixing mount-points for device $DEVICE"
 
 case "$DEVICE" in
+
+    "ane")
+        sed -i \
+            -e 's block/platform/hi_mci.0/by-name/bootfail_info mmcblk0p49 ' \
+            -e 's block/platform/hi_mci.0/by-name/cache mmcblk0p43 ' \
+            -e 's block/platform/hi_mci.0/by-name/cust mmcblk0p53 ' \
+            -e 's block/platform/hi_mci.0/by-name/dfx mmcblk0p41 ' \
+            -e 's block/platform/hi_mci.0/by-name/dto mmcblk0p36 ' \
+            -e 's block/platform/hi_mci.0/by-name/dts mmcblk0p35 ' \
+            -e 's block/platform/hi_mci.0/by-name/eng_system mmcblk0p32 ' \
+            -e 's block/platform/hi_mci.0/by-name/eng_vendor mmcblk0p40 ' \
+            -e 's block/platform/hi_mci.0/by-name/erecovery_kernel mmcblk0p28 ' \
+            -e 's block/platform/hi_mci.0/by-name/erecovery_ramdisk mmcblk0p29 ' \
+            -e 's block/platform/hi_mci.0/by-name/erecovery_vbmeta mmcblk0p39 ' \
+            -e 's block/platform/hi_mci.0/by-name/erecovery_vendor mmcblk0p30 ' \
+            -e 's block/platform/hi_mci.0/by-name/fastboot mmcblk0p5 ' \
+            -e 's block/platform/hi_mci.0/by-name/frp mmcblk0p4 ' \
+            -e 's block/platform/hi_mci.0/by-name/fw_hifi mmcblk0p27 ' \
+            -e 's block/platform/hi_mci.0/by-name/fw_lpm3 mmcblk0p3 ' \
+            -e 's block/platform/hi_mci.0/by-name/hisitest0 mmcblk0p45 ' \
+            -e 's block/platform/hi_mci.0/by-name/hisitest1 mmcblk0p46 ' \
+            -e 's block/platform/hi_mci.0/by-name/hisitest2 mmcblk0p47 ' \
+            -e 's block/platform/hi_mci.0/by-name/kernel mmcblk0p31 ' \
+            -e 's block/platform/hi_mci.0/by-name/misc mmcblk0p20 ' \
+            -e 's block/platform/hi_mci.0/by-name/modem_fw mmcblk0p37 ' \
+            -e 's block/platform/hi_mci.0/by-name/modem_om mmcblk0p18 ' \
+            -e 's block/platform/hi_mci.0/by-name/modem_secure mmcblk0p17 ' \
+            -e 's block/platform/hi_mci.0/by-name/modemnvm_backup mmcblk0p10 ' \
+            -e 's block/platform/hi_mci.0/by-name/modemnvm_factory mmcblk0p6 ' \
+            -e 's block/platform/hi_mci.0/by-name/modemnvm_img mmcblk0p11 ' \
+            -e 's block/platform/hi_mci.0/by-name/modemnvm_system mmcblk0p12 ' \
+            -e 's block/platform/hi_mci.0/by-name/modemnvm_update mmcblk0p21 ' \
+            -e 's block/platform/hi_mci.0/by-name/nvme mmcblk0p7 ' \
+            -e 's block/platform/hi_mci.0/by-name/odm mmcblk0p44 ' \
+            -e 's block/platform/hi_mci.0/by-name/oeminfo mmcblk0p8 ' \
+            -e 's block/platform/hi_mci.0/by-name/patch mmcblk0p48 ' \
+            -e 's block/platform/hi_mci.0/by-name/persist mmcblk0p16 ' \
+            -e 's block/platform/hi_mci.0/by-name/preload mmcblk0p23 ' \
+            -e 's block/platform/hi_mci.0/by-name/product mmcblk0p56 ' \
+            -e 's block/platform/hi_mci.0/by-name/recovery_ramdisk mmcblk0p33 ' \
+            -e 's block/platform/hi_mci.0/by-name/recovery_vbmeta mmcblk0p38 ' \
+            -e 's block/platform/hi_mci.0/by-name/recovery_vendor mmcblk0p34 ' \
+            -e 's block/platform/hi_mci.0/by-name/reserved2 mmcblk0p22 ' \
+            -e 's block/platform/hi_mci.0/by-name/reserved3 mmcblk0p9 ' \
+            -e 's block/platform/hi_mci.0/by-name/reserved4 mmcblk0p14 ' \
+            -e 's block/platform/hi_mci.0/by-name/reserved5 mmcblk0p15 ' \
+            -e 's block/platform/hi_mci.0/by-name/reserved9 mmcblk0p51 ' \
+            -e 's block/platform/hi_mci.0/by-name/rrecord mmcblk0p50 ' \
+            -e 's block/platform/hi_mci.0/by-name/secure_storage mmcblk0p13 ' \
+            -e 's block/platform/hi_mci.0/by-name/sensorhub mmcblk0p26 ' \
+            -e 's block/platform/hi_mci.0/by-name/splash2 mmcblk0p19 ' \
+            -e 's block/platform/hi_mci.0/by-name/system mmcblk0p52 ' \
+            -e 's block/platform/hi_mci.0/by-name/teeos mmcblk0p24 ' \
+            -e 's block/platform/hi_mci.0/by-name/trustfirmware mmcblk0p25 ' \
+            -e 's block/platform/hi_mci.0/by-name/userdata mmcblk0p57 ' \
+            -e 's block/platform/hi_mci.0/by-name/vbmeta mmcblk0p42 ' \
+            -e 's block/platform/hi_mci.0/by-name/vendor mmcblk0p55 ' \
+            -e 's block/platform/hi_mci.0/by-name/version mmcblk0p54 ' \
+            -e 's block/platform/hi_mci.0/by-name/vrl mmcblk0p1 ' \
+            -e 's block/platform/hi_mci.0/by-name/vrl_backup mmcblk0p2 ' \
+            "$@"
+        ;;
+
     "pioneer"|"discovery"|"voyager")
         sed -i \
             -e 's block/bootdevice/by-name/LTALabel mmcblk0p7 ' \
